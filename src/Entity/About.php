@@ -47,6 +47,11 @@ class About
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $shortDescription;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class About
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getShortDescription(): ?string
+    {
+        return $this->shortDescription;
+    }
+
+    public function setShortDescription(string $shortDescription): self
+    {
+        $this->shortDescription = $shortDescription;
 
         return $this;
     }
