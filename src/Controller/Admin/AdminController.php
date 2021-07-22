@@ -6,6 +6,7 @@ use App\Entity\About;
 use App\Entity\Contact;
 use App\Entity\Project;
 use App\Entity\Techno;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -46,5 +47,6 @@ class AdminController extends AbstractDashboardController
         yield MenuItem::linkToCrud('A propos', '', About::class);
         yield MenuItem::linkToCrud('Technos', '', Techno::class);
         yield MenuItem::linkToCrud('Contact', '', Contact::class);
+        yield MenuItem::linkToCrud('Utilisateurs', '', User::class);
     }
 }
