@@ -1,31 +1,36 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Projets{% endblock %}
+{% block title %}Mes Projets{% endblock %}
 
 {% block body %}
 
-<div class="container">
-    <h1>Projets</h1>
-    {{ dump(projects) }}
+<div class="container m-3">
+    <h1>Mes Projets réalisés</h1>
 </div>
 <div class="row justify-content-center">
     {% for project in projects %}
     <div class="col-auto mb-4">
-        <div class="card text-center text-white bg-dark" style="width: 20rem; height: 30rem">
+        <div class="card text-center text-white bg-dark" style="width: 20rem; height: 40rem">
             <img src="{{project.illustration}}" class="card-img-top" alt="{{ project.title }} illustration">
             <div class="card-body overflow-auto">
                 <h5 class="card-title">{{ project.title }} </h5>
                 <p class="card-text">{{ project.pitch }}</p>
-                <p class="card-text">{{ project.description }}</p>
+                <p class="card-text">Description : {{ project.description|raw }}</p>
+                <p class="card-text">Date de réalisation : {{ project.createdAt|date('d/m/Y') }}</p>
+                <p class="card-text">Technologies :
+                    {% for techno in project.technos %}
+                    {{ techno.name }}
+                    {% endfor %}
+                </p>
             </div>
             <div class="card-footer">
-                <a href="{{ project.websiteLink }}"> {{ project.websiteLink }} </a>
-                </div>
+                <a href="{{ project.websiteLink }}" class="btn btn-outline-info" target="_blank"> {{ project.websiteLink
+                    }} </a>
             </div>
         </div>
-        {% else %}
-        Aucun projet trouvée.
-        {% endfor %}
     </div>
+    {% else %}
+    Aucun projet trouvée.
+    {% endfor %}
+</div>
 </div>
 {% endblock %}
