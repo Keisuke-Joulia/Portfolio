@@ -23,7 +23,7 @@ class Illustration
     private $image;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="gallery")
+     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="gallery", cascade={"persist", "remove"})
      */
     private $project;
 
