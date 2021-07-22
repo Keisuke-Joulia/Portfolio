@@ -62,8 +62,22 @@ class ProjectCrudController extends AbstractCrudController
             array_push(
                 $fields,
                 TextField::new('title', 'Titre'),
-                TextField::new('pitch', ''),
-                TextEditorField::new('description', ''),
+                TextField::new('pitch', 'Pitch'),
+                TextField::new('illustration', 'Illustration'),
+                TextEditorField::new('description', 'Description'),
+                AssociationField::new('technos', 'Technologies'),
+                DateField::new('created_at', 'Date du projet'),
+                TextField::new('github_link', 'lien GitHub'),
+                TextField::new('website_link', 'Lien du site'),
+            );
+        }
+        if ($pageName == Crud::PAGE_DETAIL) {
+            array_push(
+                $fields,
+                TextField::new('title', 'Titre'),
+                TextField::new('pitch', 'Pitch'),
+                ImageField::new('Illustration', 'Illustration'),
+                TextEditorField::new('description', 'Description'),
                 AssociationField::new('technos', 'Technologies'),
                 DateField::new('created_at', 'Date du projet'),
                 TextField::new('github_link', 'lien GitHub'),

@@ -8,6 +8,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Prosto One', cursive;
 }
 
 .content {
@@ -55,5 +56,11 @@ body {
 
 #email {
     text-decoration: none;
+    color: #0B90C9;
+}
+
+/* all projects */
+
+#subtitle {
     color: #0B90C9;
 }

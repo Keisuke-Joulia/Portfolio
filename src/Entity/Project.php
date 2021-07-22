@@ -65,7 +65,7 @@ class Project
     private $technos;
 
     /**
-     * @ORM\OneToMany(targetEntity=Illustration::class, mappedBy="project")
+     * @ORM\OneToMany(targetEntity=Illustration::class, mappedBy="project", cascade={"persist", "remove"})
      */
     private $gallery;
 

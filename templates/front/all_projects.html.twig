@@ -14,9 +14,9 @@
             <div class="card-body overflow-auto">
                 <h5 class="card-title">{{ project.title }} </h5>
                 <p class="card-text">{{ project.pitch }}</p>
-                <p class="card-text">Description : {{ project.description|raw }}</p>
-                <p class="card-text">Date de réalisation : {{ project.createdAt|date('d/m/Y') }}</p>
-                <p class="card-text">Technologies :
+                <p class="card-text" id="subtitle">Description : {{ project.description|raw }}</p>
+                <p class="card-text" id="subtitle">Date de réalisation : {{ project.createdAt|date('d/m/Y') }}</p>
+                <p class="card-text" id="subtitle">Technologies :
                     {% for techno in project.technos %}
                     {{ techno.name }}
                     {% endfor %}
