@@ -6,7 +6,26 @@
 
 <div class="container">
     <h1>Accueil</h1>
-
-    {{ dump(about) }}
 </div>
+<div class="container">
+    <div class="card mb-3 mt-3 card border-secondary text-white bg-dark">
+      <div class="row g-0">
+        <div class="col-lg-4">
+          <img class="card-img-top" src="{{ asset('build/JouliaGuillaume.jpg') }}" alt="{{ about.title }} avatar">
+        </div>
+        <div class="card-body col-lg-8 align-self-center">
+            <h1 class="card-title" id="name">{{ about.title }}</h1>
+          <p class="card-text">{{ about.functions }}</p>
+          <p class="card-text">{{ about.shortDescription }}</p>
+          <p class="card-text">
+          <div class="row justify-content-center">
+            <div class="col-auto mb-4">
+              <a href="{{ path("about") }}" class="btn btn-outline-info">En savoir plus</a>
+            </div>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

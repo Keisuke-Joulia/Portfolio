@@ -6,13 +6,20 @@ use App\Entity\About;
 use App\Entity\Contact;
 use App\Entity\Project;
 use App\Entity\Techno;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\CrudUrlGenerator;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
+/**
+ * Require ROLE_ADMIN for *every* controller method in this class.
+ *
+ * @IsGranted("ROLE_ADMIN")
+ */
 class AdminController extends AbstractDashboardController
 {
     /**
@@ -34,11 +41,12 @@ class AdminController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoRoute('Retour sur le site', 'fa fa-home', 'home');
-        yield MenuItem::linkToRoute('Déconnexion', 'fa fa-sign-out', 'logout');
+        yield MenuItem::linkToRoute('Déconnexion', 'fa fa-sign-out', 'app_logout');
         yield MenuItem::section('Menu');
         yield MenuItem::linkToCrud('Projets', '', Project::class);
         yield MenuItem::linkToCrud('A propos', '', About::class);
         yield MenuItem::linkToCrud('Technos', '', Techno::class);
         yield MenuItem::linkToCrud('Contact', '', Contact::class);
+        yield MenuItem::linkToCrud('Utilisateurs', '', User::class);
     }
 }

@@ -3,10 +3,42 @@
 {% block title %}A propos{% endblock %}
 
 {% block body %}
-
 <div class="container">
-    <h1>A propos de moi</h1>
-
-    {{ dump(about) }}
+</div>
+<div class="container">
+    <div class="card mb-3 mt-3 card border-secondary text-white bg-dark">
+        <div class="row g-0">
+            <div class="col-lg-4">
+                <img class="card-img-top" src="{{ asset('build/JouliaGuillaume.jpg') }}" alt="{{ about.title }} avatar">
+            </div>
+            <div class="card-body col-lg-8">
+                <h1 class="text-center" id="a-propos">A propos de moi</h1>
+                <h1 class="card-title" id="name">{{ about.title }}</h1>
+                <p class="card-text">{{ about.functions }}</p>
+                <p class="card-text">{{ about.description }}</p>
+                <p class="card-text"><small class="text-muted">Me joindre directement par mail : <a href="mailto:{{ about.email
+                        }}" id="email">{{ about.email }}</a></small></p>
+                <p class="card-text">
+                <div class="row justify-content-center">
+                    <div class="col-auto mb-4">
+                        <!-- <a href="" class="btn btn-outline-info">Télécharger mon CV</a> -->
+                        <a href="{{ asset('build/CV-Guillaume-joulia.pdf') }}" class="btn btn-outline-info" target="_blank">Télécharger CV</a>
+                    </div>
+                    <div class="col-auto mb-4">
+                        <a href="{{ path("all_projects") }}" class="btn btn-outline-info">Voir mes projets</a>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-auto mb-4">
+                        <a href="{{ about.githubLink }}" class="btn btn-outline-info">Voir mon GitHub</a>
+                    </div>
+                    <div class="col-auto mb-4">
+                        <a href="{{ about.linkedin }}" class="btn btn-outline-info">Voir mon Linkedin</a>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
