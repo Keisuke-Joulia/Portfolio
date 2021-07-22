@@ -29,6 +29,7 @@ class AppFixtures extends Fixture
             ->setFunctions('Développeur Web et web mobile')
             ->setEmail('contact@jouliaguillaume.com')
             ->setGithubLink('Keisuke-Joulia')
+            ->setLinkedin('https://www.linkedin.com/in/guillaume-joulia/')
             ->setDescription('Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat fugit corrupti ea repudiandae blanditiis pariatur. Sint nihil, reiciendis voluptatem dolor, dicta quod dolorum unde ea tempore mollitia cumque beatae? Repellendus!')
             ->setAvatar('https://zupimages.net/up/21/29/2vko.png')
             ->setShortDescription('Lorem ipsum dolor sit amet consectetur adipisicing elit.');

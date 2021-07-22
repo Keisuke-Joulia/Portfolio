@@ -52,6 +52,11 @@ class About
      */
     private $shortDescription;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $linkedin;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -137,6 +142,18 @@ class About
     public function setShortDescription(string $shortDescription): self
     {
         $this->shortDescription = $shortDescription;
+
+        return $this;
+    }
+
+    public function getLinkedin(): ?string
+    {
+        return $this->linkedin;
+    }
+
+    public function setLinkedin(string $linkedin): self
+    {
+        $this->linkedin = $linkedin;
 
         return $this;
     }

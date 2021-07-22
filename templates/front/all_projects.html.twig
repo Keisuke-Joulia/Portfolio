@@ -6,7 +6,26 @@
 
 <div class="container">
     <h1>Projets</h1>
-
     {{ dump(projects) }}
+</div>
+<div class="row justify-content-center">
+    {% for project in projects %}
+    <div class="col-auto mb-4">
+        <div class="card text-center text-white bg-dark" style="width: 20rem; height: 30rem">
+            <img src="{{project.illustration}}" class="card-img-top" alt="{{ project.title }} illustration">
+            <div class="card-body overflow-auto">
+                <h5 class="card-title">{{ project.title }} </h5>
+                <p class="card-text">{{ project.pitch }}</p>
+                <p class="card-text">{{ project.description }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{{ project.websiteLink }}"> {{ project.websiteLink }} </a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        Aucun projet trouvée.
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
