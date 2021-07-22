@@ -30,7 +30,8 @@ class AppFixtures extends Fixture
             ->setEmail('contact@jouliaguillaume.com')
             ->setGithubLink('Keisuke-Joulia')
             ->setDescription('Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat fugit corrupti ea repudiandae blanditiis pariatur. Sint nihil, reiciendis voluptatem dolor, dicta quod dolorum unde ea tempore mollitia cumque beatae? Repellendus!')
-            ->setAvatar('https://zupimages.net/up/21/29/2vko.png');
+            ->setAvatar('https://zupimages.net/up/21/29/2vko.png')
+            ->setShortDescription('Lorem ipsum dolor sit amet consectetur adipisicing elit.');
 
         $manager->persist($about);
 
