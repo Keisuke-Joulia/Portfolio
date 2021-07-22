@@ -79,7 +79,9 @@ class FrontController extends AbstractController
             $entityManager->persist($contact);
             $entityManager->flush();
 
-            return $this->redirectToRoute('home');
+            $this->addFlash('success', 'Votre message à bien été envoyé, je vous réponds au plus vite !');
+
+            return $this->redirectToRoute('contact');
         }
 
         return $this->render('front/contact.html.twig', [
