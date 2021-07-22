@@ -34,8 +34,12 @@
             {{form_widget(form.message, { 'attr' : {'rows' : 10 }} ) }}
         </div>
     </div>
-    <div class="row mb-3">
-        <button class="btn btn-primary" type="submit">Envoyer</button>
+    <div class=" d-flex justify-content-center mt-3">
+        <div class="g-recaptcha" data-sitekey="6Lc5KbIbAAAAAKaCKR60sTVUmWm1QVym-3HwF_0k"></div>
+        <br />
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+        <input class="btn btn-outline-info" type="submit" value="Contact">
     </div>
     {{form_end(form)}}
 </div>
