@@ -10,9 +10,11 @@
     {% for project in projects %}
     <div class="col-auto mb-4">
         <div class="card text-center text-white bg-dark" style="width: 20rem; height: 40rem">
-            <img src="{{project.illustration}}" class="card-img-top" alt="{{ project.title }} illustration">
+            <div class="card-header">{{ project.title }}</div>
+            <a href="projet/{{ project.slug }}" style="min-height: 30%; max-height: 30%">
+                <img src="{{project.illustration}}" class="card-img-top" alt="{{ project.title }} illustration" style="min-height: 100%; max-height: 100%">
+            </a>
             <div class="card-body overflow-auto">
-                <h5 class="card-title">{{ project.title }} </h5>
                 <p class="card-text">{{ project.pitch }}</p>
                 <p class="card-text" id="subtitle">Description : {{ project.description|raw }}</p>
                 <p class="card-text" id="subtitle">Date de réalisation : {{ project.createdAt|date('d/m/Y') }}</p>
@@ -23,8 +25,7 @@
                 </p>
             </div>
             <div class="card-footer">
-                <a href="{{ project.websiteLink }}" class="btn btn-outline-info" target="_blank"> {{ project.websiteLink
-                    }} </a>
+                <a href="{{ project.websiteLink }}" class="btn btn-outline-info" target="_blank" style="max-width: 18rem">{{ project.websiteLink }}</a>
             </div>
         </div>
     </div>
