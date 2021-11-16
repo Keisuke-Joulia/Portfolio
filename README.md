@@ -2,6 +2,10 @@
 ![Version](https://img.shields.io/badge/version-Checkpoint-blue.svg?cacheSeconds=2592000)
 
 > Création de portfolio en ligne
+> composer install
+> yarn install
+> yarn encore dev
+> symfony server:start
 
 ## Author
 
